@@ -10,6 +10,16 @@ import { Summary } from './components/summary'
 export default function CartPage() {
   const cart = useCart()
 
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return null
+  }
+
   return (
     <div className="bg-white">
       <Container>
