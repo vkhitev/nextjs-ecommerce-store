@@ -1,5 +1,6 @@
 import getProduct from '@/actions/get-product'
 import getProducts from '@/actions/get-products'
+import { ContentNotFound } from '@/components/content-not-found'
 import { Gallery } from '@/components/gallery'
 import { Info } from '@/components/info'
 import { ProductList } from '@/components/product-list'
@@ -15,6 +16,10 @@ interface ProductPageProps {
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProduct(params.productId)
+
+  if (product == null) {
+    return <ContentNotFound />
+  }
 
   const suggestedProducts = await getProducts({
     categoryId: product.category.id,

@@ -8,6 +8,7 @@ import { Filter } from './components/filter'
 import { NoResults } from '@/components/ui/no-results'
 import { ProductCard } from '@/components/ui/product-card'
 import { MobileFilters } from './components/mobile-filters'
+import { ContentNotFound } from '@/components/content-not-found'
 
 export const revalidate = 0
 
@@ -35,6 +36,10 @@ export default async function CategoryPage({
     getColors(),
     getCategory(params.categoryId),
   ])
+
+  if (category == null) {
+    return <ContentNotFound />
+  }
 
   return (
     <div className="bg-white">

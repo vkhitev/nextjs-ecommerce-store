@@ -1,6 +1,7 @@
 import getBillboard from '@/actions/get-billboard'
 import getProducts from '@/actions/get-products'
 import { Billboard } from '@/components/billboard'
+import { ContentNotFound } from '@/components/content-not-found'
 import { ProductList } from '@/components/product-list'
 import { Container } from '@/components/ui/container'
 
@@ -10,7 +11,12 @@ export default async function HomePage() {
   const products = await getProducts({
     isFeatured: true,
   })
+
   const billboard = await getBillboard('928431e4-9782-44d5-a72e-58d3daf73b3d')
+
+  if (billboard == null) {
+    return <ContentNotFound />
+  }
 
   return (
     <Container>
