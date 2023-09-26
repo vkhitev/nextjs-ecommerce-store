@@ -32,12 +32,7 @@ export const MobileFilters = ({ sizes, colors }: MobileFiltersProps) => {
         <PlusIcon size={20} />
       </Button>
 
-      <Dialog
-        open={open}
-        as="div"
-        className="relative z-40 lg:hidden"
-        onClose={onClose}
-      >
+      <Dialog open={open} as="div" className="relative z-40 lg:hidden" onClose={onClose}>
         {/* Background */}
         <div className="fixed inset-0 bg-black bg-opacity-25" />
 

@@ -26,19 +26,13 @@ export const Summary = () => {
     }
   }, [searchParams, removeAll])
 
-  const totalPrice = items.reduce(
-    (total, item) => total + Number(item.price),
-    0,
-  )
+  const totalPrice = items.reduce((total, item) => total + Number(item.price), 0)
 
   const onCheckout = async () => {
     setLoading(true)
-    const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
-      {
-        productIds: items.map((item) => item.id),
-      },
-    )
+    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
+      productIds: items.map((item) => item.id),
+    })
 
     window.location = response.data.url
   }
@@ -52,14 +46,10 @@ export const Summary = () => {
           <Currency value={totalPrice.toString()} />
         </div>
       </div>
-      <Button
-        disabled={items.length === 0}
-        className="w-full mt-6"
-        onClick={onCheckout}
-      >
+      <Button disabled={items.length === 0} className="mt-6 w-full" onClick={onCheckout}>
         {loading ? (
-          <div className="flex justify-center cursor-wait space-x-2">
-            <RefreshCwIcon className="w-6 h-6 animate-spin" />
+          <div className="flex cursor-wait justify-center space-x-2">
+            <RefreshCwIcon className="h-6 w-6 animate-spin" />
             <p>Loading....</p>
           </div>
         ) : (

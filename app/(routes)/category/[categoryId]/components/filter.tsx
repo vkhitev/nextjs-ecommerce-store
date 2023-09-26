@@ -51,7 +51,7 @@ export const Filter = ({ data, name, valueKey }: FilterProps) => {
           <div key={filter.id} className="flex items-center">
             <Button
               className={cn(
-                'rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300',
+                'rounded-md border border-gray-300 bg-white p-2 text-sm text-gray-800',
                 selectedValue === filter.id && 'bg-black text-white',
               )}
               onClick={() => {
