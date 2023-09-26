@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 
-const Skeleton = ({
+export const Skeleton = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
@@ -11,5 +11,3 @@ const Skeleton = ({
     />
   )
 }
-
-export default Skeleton
