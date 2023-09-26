@@ -42,7 +42,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
       {/* Images anc Actions */}
       <div className="relative aspect-square rounded-xl bg-gray-100">
         <Image
-          src={data.images[0].url}
+          src={data.images[0]!.url}
           fill
           alt="Image"
           className="aspect-square rounded-md object-cover"
