@@ -42,15 +42,18 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
+// const classNameWithDark =
+//   'bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white'
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+      <body className="bg-neutral-50 text-black selection:bg-teal-300">
         <ModalProvider />
         <ToastProvider />
         <Navbar />
         <Suspense>
-          <main>{children}</main>
+          <main className="h-full">{children}</main>
         </Suspense>
         <Footer />
       </body>
