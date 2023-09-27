@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ToastProvider />
         <Navbar />
         <Suspense>
-          <main className="h-full">{children}</main>
+          <main>{children}</main>
         </Suspense>
         <Footer />
       </body>
