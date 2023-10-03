@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Suspense } from 'react'
 
-import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar'
 import { ModalProvider } from '@/providers/modal-provider'
 import { ToastProvider } from '@/providers/toast-provider'
@@ -42,9 +41,6 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-// const classNameWithDark =
-//   'bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white'
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
@@ -55,7 +51,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Suspense>
           <main>{children}</main>
         </Suspense>
-        <Footer />
       </body>
     </html>
   )

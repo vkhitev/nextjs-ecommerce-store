@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/container'
 import { MainNav } from '@/components/main-nav'
 import getCategories from '@/actions/get-categories'
 import { NavbarActions } from '@/components/navbar-actions'
+import Search from './search'
 
 export const Navbar = async () => {
   const categories = await getCategories()
@@ -16,6 +17,9 @@ export const Navbar = async () => {
             <p className="text-xl font-bold">STORE</p>
           </Link>
           <MainNav data={categories} />
+          <div className="hidden justify-center md:flex md:w-1/3">
+            <Search />
+          </div>
           <NavbarActions />
         </div>
       </Container>
