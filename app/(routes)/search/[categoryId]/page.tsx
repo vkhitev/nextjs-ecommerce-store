@@ -2,7 +2,6 @@ import getCategory from '@/actions/get-category'
 import getColors from '@/actions/get-colors'
 import getProducts from '@/actions/get-products'
 import getSizes from '@/actions/get-sizes'
-import { Billboard } from '@/components/billboard'
 
 import { Filter } from './components/filter'
 import { NoResults } from '@/components/ui/no-results'
@@ -10,6 +9,7 @@ import { ProductCard } from '@/components/ui/product-card'
 import { MobileFilters } from './components/mobile-filters'
 import { ContentNotFound } from '@/components/content-not-found'
 import { Container } from '@/components/ui/container'
+import { BillboardClient } from '@/components/billboard-client'
 
 export const revalidate = 0
 
@@ -42,7 +42,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
   return (
     <div className="bg-white">
       <Container>
-        <Billboard data={category.billboard} />
+        <BillboardClient billboard={category.billboard} />
         <div className="px-4 pb-24 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
             {/* Add mobile filters */}
