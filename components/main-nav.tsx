@@ -4,19 +4,19 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
-import { Category } from '@/types'
+import { AecCategory } from '@/lib/aec'
 
 interface MainNavProps {
-  data: Array<Category>
+  categories: Array<AecCategory>
 }
 
-export const MainNav = ({ data }: MainNavProps) => {
+export const MainNav = ({ categories }: MainNavProps) => {
   const pathname = usePathname()
 
-  const routes = data.map((route) => ({
-    href: `/search/${route.id}`,
-    label: route.name,
-    active: pathname === `/search/${route.id}`,
+  const routes = categories.map((category) => ({
+    href: `/search/${category.categoryId}`,
+    label: category.name,
+    active: pathname === `/search/${category.categoryId}`,
   }))
 
   return (

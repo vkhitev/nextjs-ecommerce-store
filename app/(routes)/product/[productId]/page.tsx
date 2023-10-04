@@ -4,6 +4,7 @@ import { ContentNotFound } from '@/components/content-not-found'
 import { Gallery } from '@/components/gallery'
 import { Info } from '@/components/info'
 import { ProductList } from '@/components/product-list'
+import { ProductListClient } from '@/components/product-list-client'
 import { Container } from '@/components/ui/container'
 
 export const revalidate = 0
@@ -36,7 +37,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
           </div>
           <hr className="my-10" />
-          <ProductList title="Related Items" items={suggestedProducts} />
+          <ProductListClient title="Related Items" products={suggestedProducts} />
         </div>
       </Container>
     </div>
