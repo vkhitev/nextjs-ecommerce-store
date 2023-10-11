@@ -96,8 +96,9 @@ export type AecCategory = {
 }
 
 export async function getCategories(): Promise<AecCategory[]> {
-  const res = await fetch('http://192.168.88.14:7081/core/storefront/categories')
-  return res.json()
+  // const res = await fetch('http://192.168.88.14:7081/core/storefront/categories')
+  // return res.json()
+  return []
 }
 
 export type AecProduct = {
@@ -151,9 +152,10 @@ export type AecProduct = {
 }
 
 export async function getProduct(productId: string): Promise<AecProduct | null> {
-  const res = await fetch(`http://192.168.88.14:7081/core/storefront/products/${productId}`)
-  if (res.status === 404) {
-    return null
-  }
-  return res.json()
+  return null
+  // const res = await fetch(`http://192.168.88.14:7081/core/storefront/products/${productId}`)
+  // if (res.status === 404) {
+  //   return null
+  // }
+  // return res.json()
 }
